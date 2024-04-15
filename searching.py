@@ -36,8 +36,19 @@ def read_data(file_name, field):
         print(f"Error reading data from '{file_name}': {e}")
         return None
 
+def linear_search(sequence, target):
+
+    positions = []
+    count = 0
+    for i, num in enumerate(sequence):
+         if num == target:
+            positions.append(i)
+            count += 1
+
+    return {"positions": positions, "count": count}
 
 
+    
 def main():
     sequential_data = read_data("sequential.json", "unordered_numbers")
     if sequential_data is not None:
